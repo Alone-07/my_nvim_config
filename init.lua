@@ -1,0 +1,14 @@
+--settings
+require('settings')
+--plugins
+require('plugins')
+--treesitter
+require('treesitter')
+--lualine
+require('lua-line')
+--lsp
+require('lsp')
+--null
+require('null')
+--auto-cmp
+require('auto-cmp')
