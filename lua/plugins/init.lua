@@ -43,4 +43,9 @@ use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
 --autobrakets
 use 'jiangmiao/auto-pairs'
+
+use {
+    "terrortylor/nvim-comment",
+   require('nvim_comment').setup()
+}
 end)
