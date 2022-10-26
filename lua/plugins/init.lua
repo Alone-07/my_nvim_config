@@ -48,4 +48,6 @@ use {
     "terrortylor/nvim-comment",
    require('nvim_comment').setup()
 }
+use 'xiyaowong/nvim-transparent'
+use 'leafOfTree/vim-vue-plugin'
 end)

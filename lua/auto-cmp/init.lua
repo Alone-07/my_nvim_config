@@ -44,3 +44,6 @@ vim.g.completeopt="menu,menuone,noselect,noinsert"
   require('lspconfig').tsserver.setup {
     capabilities = capabilities
   }
+  require('lspconfig').vuels.setup {
+    capabilities = capabilities
+  }

@@ -1,8 +1,8 @@
 vim.opt.relativenumber = true
 vim.opt.list = true
 --vim.opt.listchars:append('tab: >')
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 vim.opt.autoindent = true
@@ -21,6 +21,9 @@ vim.cmd[[colorscheme gruvbox]]
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
+ 
+--to set neovim transparent
+vim.g.transparent_enabled = true
 
 --keyMapings:
 

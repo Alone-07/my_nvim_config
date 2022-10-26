@@ -1,9 +1,9 @@
-  require('lualine').setup {
+    require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -31,10 +31,10 @@
     lualine_c = {'filename'},
     lualine_x = {'location'},
     lualine_y = {},
-   lualine_z = {}
+    lualine_z = {}
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
   extensions = {}
-  }
+}

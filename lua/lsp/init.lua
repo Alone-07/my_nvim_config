@@ -45,10 +45,7 @@ local lsp_flags = {
 
 
 
-require('lspconfig')['volar'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags
-}
+
 require('lspconfig')['emmet_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags
@@ -58,6 +55,10 @@ require('lspconfig')['html'].setup{
     flags = lsp_flags
 }
 require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags
+}
+require('lspconfig')['vuels'].setup{
     on_attach = on_attach,
     flags = lsp_flags
 }
