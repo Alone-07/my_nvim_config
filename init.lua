@@ -12,3 +12,5 @@ require('lsp')
 require('null')
 --auto-cmp
 require('auto-cmp')
+--nerdTree
+require('nerdTree')

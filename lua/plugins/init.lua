@@ -25,7 +25,13 @@ return require('packer').startup(function(use)
   use 'haorenW1025/completion-nvim' --completion for nvim
   use 'nvim-treesitter/completion-treesitter' --completion for treesitter
   use 'kyazdani42/nvim-web-devicons' --nerd icons
-  use 'preservim/nerdtree'
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
   use {
   'nvim-lualine/lualine.nvim',
 } --lualine
