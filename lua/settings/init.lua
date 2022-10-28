@@ -17,6 +17,10 @@ vim.opt.fileencoding = 'UTF-8'
 
 vim.cmd[[colorscheme gruvbox]]
 
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Map global leader from \ to Space
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
@@ -49,7 +53,7 @@ map("n", "<leader>l", ":tabn<CR>", opts)
 map("n", "<c-d>", ":tabc<CR>", opts)
 
 --nerd tree:-
-map("n", "<leader>b", ":NERDTreeToggle<CR>", opts)
+map("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
 --map("n", "<leader>f", ":NERDTreeFocus<CR>", opts)
 
 
