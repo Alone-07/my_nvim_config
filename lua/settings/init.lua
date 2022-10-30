@@ -14,8 +14,9 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.wrap = true
 vim.opt.fileencoding = 'UTF-8'
+vim.opt.splitbelow = true 
 
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme codedark]]
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -28,6 +29,10 @@ local opts = {noremap = true, silent = true}
  
 --to set neovim transparent
 vim.g.transparent_enabled = true
+
+-- terminal settings:-
+map("n", "<C-t>",":terminal <CR>", opts)
+map("t","<Esc>","<c-\\><c-n>", opts)
 
 --keyMapings:
 
@@ -44,8 +49,6 @@ map("n", "zq", ":q!<CR>", opts)
 --to open a tab:-
 map("n", "<leader>o", ":tabe<CR>", opts)
 map("n", "<leader>t", ":Texplore<CR>", opts)
---terminal
-map("n", "<C-t>",":terminal <CR>", opts)
 --switching tabs:-
 map("n", "<leader>h", ":tabp<CR>", opts)
 map("n", "<leader>l", ":tabn<CR>", opts)

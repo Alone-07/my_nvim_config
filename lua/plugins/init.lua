@@ -4,6 +4,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim' --usein manager
   use 'morhetz/gruvbox' --colorscheme
+  -- use 'dunstontc/vim-vscode-theme' --vs code colorscheme
+  use 'tomasiser/vim-code-dark' --vs code colorscheme
   use {
       'nvim-treesitter/nvim-treesitter',
   } --treesitter
@@ -23,6 +25,7 @@ return require('packer').startup(function(use)
   }
 
   use 'haorenW1025/completion-nvim' --completion for nvim
+  use 'onsails/lspkind.nvim' --completion for nvim
   use 'nvim-treesitter/completion-treesitter' --completion for treesitter
   use 'kyazdani42/nvim-web-devicons' --nerd icons
   use {
