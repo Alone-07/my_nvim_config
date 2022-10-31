@@ -65,3 +65,10 @@ map("n", "<c-h>", "<c-w>h", opts) --focus left
 map("n", "<c-l>", "<c-w>l", opts) --focus right
 map("n", "<c-j>", "<c-w>j", opts) --focus bottom
 map("n", "<c-k>", "<c-w>k", opts) --focus above
+
+--Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
