@@ -4,8 +4,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim' --usein manager
   use 'morhetz/gruvbox' --colorscheme
-  -- use 'dunstontc/vim-vscode-theme' --vs code colorscheme
-  use 'tomasiser/vim-code-dark' --vs code colorscheme
+  use 'Mofiqul/vscode.nvim'
   use {
       'nvim-treesitter/nvim-treesitter',
   } --treesitter
@@ -40,8 +39,6 @@ return require('packer').startup(function(use)
 } --lualine
 
 use 'jose-elias-alvarez/null-ls.nvim'
-use 'MunifTanjim/prettier.nvim'
-
 use 'hrsh7th/cmp-nvim-lsp'
 use 'hrsh7th/cmp-buffer'
 use 'hrsh7th/cmp-path'
@@ -64,4 +61,10 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }--telescope
+use 'mhartington/oceanic-next' --oceanic-next theme
+use {
+  'romgrk/barbar.nvim',
+}
+use 'ghifarit53/tokyonight-vim'
+use 'p00f/nvim-ts-rainbow' -- rainbow brackets
 end)

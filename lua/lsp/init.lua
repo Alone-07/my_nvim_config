@@ -35,16 +35,14 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format()  end, bufopts)
+  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-
-
-
 
 require('lspconfig')['emmet_ls'].setup{
     on_attach = on_attach,
@@ -59,6 +57,10 @@ require('lspconfig')['tsserver'].setup{
     flags = lsp_flags
 }
 require('lspconfig')['vuels'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags
+}
+require('lspconfig')['jdtls'].setup{
     on_attach = on_attach,
     flags = lsp_flags
 }

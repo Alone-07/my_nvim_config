@@ -8,6 +8,8 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.cursorline = true
 --vim.opt.cursorcolumn = true
+vim.opt.splitbelow = false
+vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -16,7 +18,7 @@ vim.opt.wrap = true
 vim.opt.fileencoding = 'UTF-8'
 vim.opt.splitbelow = true 
 
-vim.cmd[[colorscheme codedark]]
+vim.cmd[[colorscheme vscode]]
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -28,7 +30,7 @@ local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
  
 --to set neovim transparent
-vim.g.transparent_enabled = true
+vim.g.transparent_enabled = false
 
 -- terminal settings:-
 map("n", "<C-t>",":terminal <CR>", opts)
@@ -50,10 +52,16 @@ map("n", "zq", ":q!<CR>", opts)
 map("n", "<leader>o", ":tabe<CR>", opts)
 map("n", "<leader>t", ":Texplore<CR>", opts)
 --switching tabs:-
-map("n", "<leader>h", ":tabp<CR>", opts)
-map("n", "<leader>l", ":tabn<CR>", opts)
---to close the tab
-map("n", "<c-d>", ":tabc<CR>", opts)
+-- map("n", "<leader>h", ":tabp<CR>", opts)
+-- map("n", "<leader>l", ":tabn<CR>", opts)
+
+-- tab bar
+-- ':' or "<Cmd>"
+map("n", "<leader>h", ":BufferPrevious<CR>", opts)
+map("n", "<leader>l", ":BufferNext<CR>", opts)
+
+-- Close buffer
+map('n', '<c-d>', '<Cmd>BufferClose<CR>', opts)
 
 --nerd tree:-
 map("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
