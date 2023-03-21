@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = {"lua", "javascript"},
+  ensure_installed = {"lua", "javascript", "typescript","html", "css", "vue", "rust", "c", "help" },
   highlight = {
     -- `false` will disable the whole extension
     enable = true,

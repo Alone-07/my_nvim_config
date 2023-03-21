@@ -1,3 +1,4 @@
+vim.notify = require("notify")
 vim.opt.relativenumber = true
 vim.opt.list = true
 --vim.opt.listchars:append('tab: >')
@@ -8,33 +9,55 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.cursorline = true
 --vim.opt.cursorcolumn = true
+--for fat cursor
+vim.opt.guicursor = ""
+
 vim.opt.splitbelow = false
 vim.opt.splitright = true
+
 vim.opt.swapfile = false
+
+--for undofile plugin
+vim.opt.undofile = true
+
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.wrap = true
-vim.opt.fileencoding = 'UTF-8'
-vim.opt.splitbelow = true 
 
-vim.cmd[[colorscheme vscode]]
+vim.opt.ignorecase = true
+
+vim.opt.wrap = true
+vim.opt.scrolloff = 5
+vim.opt.fileencoding = 'UTF-8'
+vim.opt.showmatch = true
+vim.opt.hidden = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+
+vim.cmd[[colorscheme NeoSolarized]]
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 -- Map global leader from \ to Space
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 local opts = {noremap = true, silent = true}
  
 --to set neovim transparent
-vim.g.transparent_enabled = false
+-- vim.g.transparent_enabled = true -- its for transparent pack in plugins init.lua
+
+-- vim.api.nvim_set_hl(0, "Normal", {bg= "none"})
+-- vim.api.nvim_set_hl(0, "NormalFloat", {bg= "none"})
 
 -- terminal settings:-
 map("n", "<C-t>",":terminal <CR>", opts)
 map("t","<Esc>","<c-\\><c-n>", opts)
+
+--UndoTree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+--Git (vim-fugitive)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
 --keyMapings:
 
@@ -65,7 +88,7 @@ map('n', '<c-d>', '<Cmd>BufferClose<CR>', opts)
 
 --nerd tree:-
 map("n", "<leader>b", ":NvimTreeToggle<CR>", opts)
---map("n", "<leader>f", ":NERDTreeFocus<CR>", opts)
+-- map("n", "<leader>f", ":NvimTreeFocus<CR>", opts)
 
 
 --windows:-
@@ -74,9 +97,8 @@ map("n", "<c-l>", "<c-w>l", opts) --focus right
 map("n", "<c-j>", "<c-w>j", opts) --focus bottom
 map("n", "<c-k>", "<c-w>k", opts) --focus above
 
---Telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+--copy in clipboard
+-- vim.keymap.set("n", "<leader>y", "\" +y")
+-- vim.keymap.set("v", "<leader>y", "\" +y")
+-- vim.keymap.set("n", "<leader>Y", "\" +Y")

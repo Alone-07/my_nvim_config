@@ -1,7 +1,7 @@
---settings
-require('settings')
 --plugins
 require('plugins')
+--settings
+require('settings')
 --treesitter
 require('treesitter')
 --lualine
@@ -10,7 +10,9 @@ require('lua-line')
 require('lsp')
 --null
 require('null')
---auto-cmp
-require('auto-cmp')
 --nerdTree
 require('nerdTree')
+--notify
+require('notify')
+--Telescope
+require('Telescope')
